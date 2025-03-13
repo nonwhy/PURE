@@ -39,8 +39,8 @@ We will release the code and models soon.🚀
   <img width="900" src="figs/quantitative1.png">
 </p>
 
-<p align="left">
-  <img width="300" src="figs/quantitative2.png">
+<p align="center">
+  <img width="400" src="figs/quantitative2.png">
 </p>
 </details>
 
@@ -52,11 +52,11 @@ We will release the code and models soon.🚀
 </p>
 
 <p align="center">
-  <img width="500" src="figs/supp1.png">
+  <img width="900" src="figs/supp1.png">
 </p>
 
 <p align="center">
-  <img width="500" src="figs/supp2.png">
+  <img width="900" src="figs/supp2.png">
 </p>
 </details>
 
