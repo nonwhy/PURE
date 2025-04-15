@@ -118,7 +118,7 @@ text=generated[0]
 print(text)
 
 ```
-You can adjust the ```temperature``` and ```CFG(Classifier-Free Guidance)``` parameters to achieve different restoration results.
+The final output image resolution is 512x512, so your input image resolution should be 128x128 (4x), 256x256 (2x), or 512x512 (1x). You can adjust the ```temperature``` and ```CFG(Classifier-Free Guidance)``` parameters to achieve different restoration results.
 
 ### 🚀 Accelerate Inference
 We can seamlessly accelerate inference through [Speculative Jacobi Decoding](https://github.com/tyshiwo1/Accelerating-T2I-AR-with-SJD/): 
