@@ -82,6 +82,7 @@ The simple code for PURE inference:
 ```python
 from inference_solver import FlexARInferenceSolver
 from PIL import Image
+from utils.wavelet_color_fix import wavelet_color_fix
 
 inference_solver = FlexARInferenceSolver(
     model_path="nonwhy/PURE",
@@ -89,8 +90,14 @@ inference_solver = FlexARInferenceSolver(
     target_size=512,
 )
 
+image_path = "/path/to/example_input.png"
+image = Image.open(image_path)
+
+if image.size != (512, 512):
+    image = image.resize((512, 512), Image.BICUBIC)
+
 q1 = "Perceive the degradation level, understand the image content, and restore the high-quality image. <|image|>"
-images = [Image.open("/path/to/example_input.png")]
+images = [image]
 qas = [[q1, None]]
 
 generated = inference_solver.generate(
@@ -105,6 +112,7 @@ generated = inference_solver.generate(
             )
 
 new_image = generated[1][0]
+new_image = wavelet_color_fix(new_image, image)
 new_image.save("./example_output.png", "PNG")
 text=generated[0]
 print(text)

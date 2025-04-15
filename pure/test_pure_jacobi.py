@@ -5,7 +5,8 @@ sys.path.append("./")
 
 from inference_solver import FlexARInferenceSolver
 from PIL import Image
-from jacobi_iteration_pure import renew_pipeline_sampler
+from utils.jacobi_iteration_pure import renew_pipeline_sampler
+from utils.wavelet_color_fix import wavelet_color_fix
 import torch
 import time
 
@@ -23,11 +24,16 @@ def set_seed(seed: int):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
+image_path = "test_SR_bicubic/Canon_005_LR4.png"
 model_path = "nonwhy/PURE"
 target_size = 512
 text_top_k = 1
 temperature = 0.9
 guidance_scale = 0.8
+
+image = Image.open(image_path)
+if image.size != (512, 512):
+    image = image.resize((512, 512), Image.BICUBIC)
 
 max_num_new_tokens = 16
 multi_token_init_scheme = 'random' # 'repeat_horizon'
@@ -41,7 +47,7 @@ inference_solver = FlexARInferenceSolver(
 )
 
 q1 = "Perceive the degradation level, understand the image content, and restore the high-quality image. <|image|>"
-images = [Image.open("test_SR_bicubic/Canon_005_LR4.png")]
+images = [image]
 qas = [[q1, None]]
 
 inference_solver = renew_pipeline_sampler(
@@ -78,5 +84,6 @@ time_end = time.time()
 print("Time elapsed: ", t, time_end - time_start)
 
 text, new_image = generated[0], generated[1][0]
+new_image = wavelet_color_fix(new_image, image)
 new_image.save("./Canon_005_test_jacobi.png", "PNG")
 print(text)
