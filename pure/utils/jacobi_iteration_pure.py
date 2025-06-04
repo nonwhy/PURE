@@ -879,7 +879,7 @@ def renew_sampler(model_class):
             if use_chameleon_tokenizer:
                 import model.chameleon_vae_ori as chameleon_vae_ori
                 chameleon_ori_vocab = chameleon_vae_ori.VocabInfo(
-                    json.load(open("./ckpts/chameleon/tokenizer/text_tokenizer.json"))["model"]["vocab"]
+                    json.load(open("./tokenizer/text_tokenizer.json"))["model"]["vocab"]
                 )
                 chameleon_ori_translation = chameleon_vae_ori.VocabTranslation(chameleon_ori_vocab)
                 img_vocab = chameleon_ori_translation._vocab.image_tokens
