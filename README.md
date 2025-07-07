@@ -1,7 +1,7 @@
 <div align="center">
 
 
-<h1>Perceive, Understand and Restore: Real-World Image Super-Resolution with Autoregressive Multimodal Generative Models</h1>
+<h1>Perceive, Understand and Restore: Real-World Image Super-Resolution with Autoregressive Multimodal Generative Models (ICCV 2025)</h1>
 
 <div>
     <span>Hongyang Wei<sup>1,3,*</sup></span>&emsp;
@@ -24,8 +24,10 @@
 
 :star: If PURE is helpful to your images or projects, please help star this repo. Thanks! :hugs:
 
+#### 🚩Accepted by ICCV 2025
 
 ## 📢 News
+- **2025.07.07** 🎉🎉🎉 Tanining code is released! 🎉🎉🎉
 - **2025.04.11** 🎉🎉🎉 Inference code and checkpoints are released! 🎉🎉🎉
 - **2025.3.13** 🎉🎉🎉 PURE is released! 🎉🎉🎉
 
@@ -126,6 +128,9 @@ We can seamlessly accelerate inference through [Speculative Jacobi Decoding](htt
 ```
 python test_pure_jacobi.py
 ```
+
+## 🌈 Train 
+Please refer to  [TRAIN.md](TRAIN.md).
 
 ## 📚 Training Datasets
 Following [SeeSR](https://github.com/cswry/SeeSR), we train PURE on LSDIR+FFHQ10k. To generate realistic LQ-HQ image pairs for training, we apply the degradation pipeline from Real-ESRGAN.
