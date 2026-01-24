@@ -159,13 +159,10 @@ If you have any questions, please feel free to contact: `weihy23@mails.tsinghua.
 If our PURE helps your research or work, please consider citing our paper:
 
 ```
-@misc{wei2025perceiveunderstandrestorerealworld,
-      title={Perceive, Understand and Restore: Real-World Image Super-Resolution with Autoregressive Multimodal Generative Models}, 
-      author={Hongyang Wei and Shuaizheng Liu and Chun Yuan and Lei Zhang},
-      year={2025},
-      eprint={2503.11073},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.11073}, 
+@article{wei2025perceive,
+  title={Perceive, Understand and Restore: Real-World Image Super-Resolution with Autoregressive Multimodal Generative Models},
+  author={Wei, Hongyang and Liu, Shuaizheng and Yuan, Chun and Zhang, Lei},
+  journal={arXiv preprint arXiv:2503.11073},
+  year={2025}
 }
 ```
